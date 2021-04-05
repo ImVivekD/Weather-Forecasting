@@ -1,0 +1,18 @@
+<h1>5 Days Weater Forecasting</h1>
+
+<div class="container">
+  <ng-container *ngFor="let data of weatherData?.list.splice(0,5); let i = index">
+    <h3>Date: {{data.dt | date:'fullDate'}}</h3>
+
+    <ul>
+      <li> <label>Temperature:</label> <span>{{data.main.temp}}</span></li>
+      <li> <label>RealFeel:</label> <span>{{data.main.feels_like}}</span></li>
+      <li> <label>Minimum Temperature:</label> <span> {{data.main.temp_min}}</span></li>
+      <li> <label>Maximum Temperature:</label> <span> {{data.main.temp_max}}</span></li>
+      <li> <label>Humidity: </label> <span>{{data.main.humidity}}</span></li>
+
+      <li> <label>Weather: </label> <span>{{data.weather[0].description}}</span></li>
+      <li> <label>Wind Speed: </label> <span>{{data.wind.speed}}</span></li>
+    </ul>
+  </ng-container>
+</div>
